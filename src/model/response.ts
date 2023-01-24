@@ -39,4 +39,8 @@ export default class ResponseModel {
         }
     }
 
+    reveleation() {
+        return new ResponseModel(this.value, this.correct, true);
+    }
+
 }

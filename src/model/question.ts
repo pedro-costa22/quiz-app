@@ -6,13 +6,14 @@ export default class QuestionModel {
     private statement: string;
     private response: ResponseModel[];
     private success: boolean;
-    // private answered: boolean;
+    private answered: boolean;
 
-    constructor(id: number, statement: string, response: any[], success: boolean = false){
+    constructor(id: number, statement: string, response: ResponseModel[], success: boolean = false, answered: boolean = false){
         this.id = id;
         this.statement = statement;
         this.response = response;
         this.success = success;
+        this.answered = answered;
     }
 
     //getters
@@ -44,8 +45,20 @@ export default class QuestionModel {
             id: this.id,
             statement: this.statement,
             reposponse: this.response.map(resp => resp.toObject()),
-            success:this.success
+            success: this.success,
+            answered: this.getAnswered
         }
+    }
+
+    responseWith(indice:  number): QuestionModel {
+        const correct = this.response[indice]?.getCorrect;
+        const responses = this.response.map((response, i) => {
+            const responseSelect = indice === i;
+            const reviewResponses = responseSelect || response.getCorrect
+            return reviewResponses ? response.reveleation() : response;
+        })
+
+        return new QuestionModel(this.id, this.statement, responses, correct);
     }
 
     sortResponse(): QuestionModel {

@@ -1,0 +1,35 @@
+.front, .back {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.front {
+    background-color: #fff;
+    color: #000;
+    align-items: center;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.back {
+
+}
+
+.back div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    border-radius: 12px;
+}
+
+.correct {
+    background-color: #2baa6c;
+}
+
+.incorrect {
+    background-color: #E44A4C;
+}
