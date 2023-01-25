@@ -4,6 +4,7 @@ import { IQuestion } from "../types/Question";
 //Components
 import Response from "./Response";
 import Statement from "./Statement";
+import Timer from "./Timer";
 
 const letters = [
     {value: 'A', color: '#F2C866'},
@@ -31,6 +32,7 @@ export default function Question(props: IQuestion){
     return (
         <div className="flex flex-col items-center">
             <Statement text={question.getStatement}/>
+            <Timer duration={props.timeToResponse ?? 10} timeOver={props.timeOver}/>
             {renderResponses()}
         </div>
     )
