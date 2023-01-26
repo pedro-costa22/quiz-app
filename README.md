@@ -26,3 +26,7 @@ Upon reaching the end of the quiz, it will be possible to view the results, cont
 
 
 
+![1quiz](https://user-images.githubusercontent.com/89493619/214908525-7e20417c-9d49-4734-ba80-c5b8140d386c.PNG)
+![2quiz](https://user-images.githubusercontent.com/89493619/214908532-274cc27b-9700-46a7-82fe-2a91a2a94d03.PNG)
+![3quiz](https://user-images.githubusercontent.com/89493619/214908545-5ea43d93-25a2-4976-a482-86b2c6037f99.PNG)
+![quiz4](https://user-images.githubusercontent.com/89493619/214908555-4c12928c-fbdf-4757-9216-38f09a8fb0c1.PNG)
