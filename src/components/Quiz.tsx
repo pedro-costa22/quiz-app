@@ -14,7 +14,7 @@ export default function Quiz({question, lastQuestion, questionAnswered, nextStep
     }
     
     return (
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center h-screen">
             <Question 
                 value={question}
                 timeToResponse={8}

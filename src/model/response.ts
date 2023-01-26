@@ -31,6 +31,11 @@ export default class ResponseModel {
         return this.revealed;
     }
 
+    static fromObject(obj: any): ResponseModel{
+        return new ResponseModel(obj.value, obj.correct, obj.revealed);
+    }
+
+
     toObject() {
         return {
             value: this.value,

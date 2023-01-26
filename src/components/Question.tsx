@@ -17,9 +17,9 @@ export default function Question(props: IQuestion){
     const question = props.value;
 
     const renderResponses = () => {
-        return question.getResponse.map((response, i) => {
+        return question?.getResponse?.map((response, i) => {
             return <Response 
-                        key={i}
+                        key={`${question?.getId}${i}`}
                         value={response}
                         indice={i}
                         letter={letters[i].value}
@@ -31,8 +31,8 @@ export default function Question(props: IQuestion){
 
     return (
         <div className="flex flex-col items-center">
-            <Statement text={question.getStatement}/>
-            <Timer duration={props.timeToResponse ?? 10} timeOver={props.timeOver}/>
+            <Statement text={question?.getStatement}/>
+            <Timer duration={props.timeToResponse ?? 10} timeOver={props.timeOver} key={question?.getId}/>
             {renderResponses()}
         </div>
     )

@@ -40,6 +40,13 @@ export default class QuestionModel {
         return false;
     }
 
+
+    static fromObject(obj: any): QuestionModel{
+        const responses = obj.reposponse.map((resp: ResponseModel) => ResponseModel.fromObject(resp));
+        return new QuestionModel(obj.id, obj.statement, responses, obj.success);
+    }
+
+
     toObject() {
         return {
             id: this.id,
